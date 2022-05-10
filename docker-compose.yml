@@ -1,0 +1,16 @@
+version: "3.0"
+
+networks:
+  localdev:
+      external: true
+    
+services:
+  api:
+    build: .
+    user: root
+    ports:
+      - "7070:80"
+    networks:
+        - localdev
+    restart: unless-stopped
+

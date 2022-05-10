@@ -1,0 +1,54 @@
+{
+  "Tokens": {
+    "Key": "aovper#$%dcdfygf658234xcjklkw3452356Q!@!#*(()fvbn<>}{46",
+    "Issuer": "https://apifirst.ir",
+    "Audience": "https://apifirst.ir"
+  },
+  "IpRateLimiting": {
+    "EnableEndpointRateLimiting": true,
+    "StackBlockedRequests": false,
+    "RealIpHeader": "X-Real-IP",
+    "ClientIdHeader": "X-ClientId",
+    "HttpStatusCode": 429,
+    "GeneralRules": [
+      {
+        "Endpoint": "post:/api/v1/app/auth/GetOtp",
+        "Period": "2m",
+        "Limit": 1
+      }
+    ]
+  },
+  "ConnectionStrings": {
+    "SqlServer": "Server='ms-sql-server';Database=TellBal;User=SA;Password=Bigpassw0rd@example.com;",
+    //"SqlServer": "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=TellbalDB;Integrated Security=true",
+    "JZ": "Server=.;Database=TellBal;User Id=sa;Password=Fckgwrhqq2!@#;"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Trace",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*",
+  "SiteSettings": {
+    "SmsApiKey": "7A534C67437642447475386C384859324972726245496F643776337A5769505A6B522B525A626D67742B593D",
+    "PaymentSettings": {
+      "PaymentReqUrl": "https://{0}zarinpal.com/pg/rest/WebGate/PaymentRequest{1}.json",
+      "PaymentGateWayUrl": "https://{0}zarinpal.com/pg/StartPay/{1}/ZarinGate",
+      "PaymentVerificationUrl": "https://{0}zarinpal.com/pg/rest/WebGate/PaymentVerification{1}.json",
+      "SandBox": "sandbox.",
+      "WWW": "www.",
+      "WithExtra": "WithExtra",
+      "ZarinMerchantId": "424baadf-ea4c-4744-b29e-5eb62a855821",
+      "CallBackUrl": "http://185.255.88.110:7070/api/v1/Order/App/VerifyCheckOut"
+    },
+    "JwtSettings": {
+      "SecretKey": "MySecret123456789",
+      "Issuer": "MyWebsite",
+      "Audience": "MyWebsite",
+      "NotBeforeMinutes": "0",
+      "ExpirationMinutes": "60"
+    }
+  }
+}
